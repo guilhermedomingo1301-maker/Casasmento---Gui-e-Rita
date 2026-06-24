@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Convite Casamento - Guilherme & Rita</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="card hero">
+      <p class="small">Convite de Casamento</p>
+      <h1>Guilherme & Rita</h1>
+      <p class="subtitle">Queremos um cachorro albino.</p>
+    </section>
+
+    <section class="card">
+      <h2>Confirme sua presença</h2>
+
+      <label>Seu nome</label>
+      <input id="nome" type="text" placeholder="Digite seu nome" />
+
+      <div id="acompanhantes"></div>
+
+      <button class="secondary" onclick="adicionarAcompanhante()">
+        + Adicionar acompanhante
+      </button>
+
+      <button onclick="confirmarPresenca()">
+        Confirmar pelo WhatsApp
+      </button>
+    </section>
+
+    <section class="card">
+      <h2>Contribuir com Pix</h2>
+      <p class="text">Escolha um valor para gerar o Pix:</p>
+
+      <div class="valores">
+        <button onclick="selecionarValor(100)">R$ 100</button>
+        <button onclick="selecionarValor(150)">R$ 150</button>
+        <button onclick="selecionarValor(200)">R$ 200</button>
+        <button onclick="selecionarValor(250)">R$ 250</button>
+      </div>
+
+      <label>Valor livre</label>
+      <input id="valorLivre" type="number" placeholder="Digite outro valor" />
+      <button onclick="usarValorLivre()">Gerar Pix</button>
+
+      <label>Escolha a chave Pix</label>
+      <select id="chavePix">
+        <option value="a4094d9c-fa16-4ec4-bbab-24322b280c4a">Chave aleatória</option>
+        <option value="82988369610">Telefone</option>
+      </select>
+
+      <div id="pixArea" class="pix-area hidden">
+        <h3>Pix gerado</h3>
+        <div id="qrcode"></div>
+
+        <textarea id="pixCopiaCola" readonly></textarea>
+
+        <button onclick="copiarPix()">Copiar código Pix</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

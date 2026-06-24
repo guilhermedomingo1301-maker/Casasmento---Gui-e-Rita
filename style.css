@@ -1,0 +1,155 @@
+:root {
+  --color-50: #F1F4F0;
+  --color-100: #D8E1D6;
+  --color-200: #C0CDBC;
+  --color-300: #A7BAA1;
+  --color-400: #8EA687;
+  --color-500: #75936C;
+  --color-600: #607859;
+  --color-700: #4B5E45;
+  --color-800: #364332;
+  --color-900: #21291E;
+  --color-950: #0C0F0B;
+
+  --cream-50: #FDF7E8;
+  --cream-100: #F9EBC7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background: linear-gradient(135deg, var(--cream-50), var(--color-100));
+  color: var(--color-900);
+}
+
+.container {
+  width: 100%;
+  max-width: 720px;
+  margin: auto;
+  padding: 24px;
+}
+
+.card {
+  background: rgba(253, 247, 232, 0.92);
+  border: 1px solid var(--color-200);
+  border-radius: 24px;
+  padding: 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 12px 30px rgba(33, 41, 30, 0.12);
+}
+
+.hero {
+  text-align: center;
+  padding: 48px 28px;
+}
+
+.small {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--color-600);
+  font-size: 14px;
+}
+
+h1 {
+  font-size: 48px;
+  margin: 12px 0;
+  color: var(--color-800);
+}
+
+h2, h3 {
+  color: var(--color-800);
+}
+
+.subtitle, .text {
+  color: var(--color-700);
+  font-size: 18px;
+}
+
+label {
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 6px;
+  color: var(--color-800);
+  font-weight: bold;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid var(--color-300);
+  border-radius: 14px;
+  background: white;
+  font-size: 16px;
+  color: var(--color-900);
+}
+
+textarea {
+  height: 130px;
+  resize: none;
+  margin-top: 16px;
+}
+
+button {
+  width: 100%;
+  margin-top: 14px;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  background: var(--color-700);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: var(--color-800);
+  transform: translateY(-1px);
+}
+
+.secondary {
+  background: var(--color-400);
+}
+
+.valores {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.pix-area {
+  margin-top: 24px;
+  text-align: center;
+}
+
+#qrcode {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.acompanhante {
+  margin-top: 10px;
+}
+
+@media (max-width: 520px) {
+  h1 {
+    font-size: 38px;
+  }
+
+  .valores {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 14px;
+  }
+}
