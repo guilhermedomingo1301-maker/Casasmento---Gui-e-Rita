@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Convite Casamento - Guilherme & Rita</title>
+  <title>Convite de Casamento - Guilherme & Rita</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="container">
     <section class="card hero">
       <p class="small">Convite de Casamento</p>
-      <h1>Guilherme & Rita</h1>
-      <p class="subtitle">Agradecemos de coração pelo carinho, e por fazer parte desse capítulo tão especial das nossas vidas. ❤️.</p>
+      <h1>Rita & Guilherme </h1>
+      <p class="subtitle">Somos gratos pela sua presença neste momento ímpar.</p>
     </section>
 
     <section class="card">
       <h2>Confirme sua presença</h2>
-
       <label>Seu nome</label>
       <input id="nome" type="text" placeholder="Digite seu nome" />
 
@@ -32,8 +31,24 @@
     </section>
 
     <section class="card">
+      <h2>Lista de Presentes (Referências)</h2>
+      <p class="text">Preparamos esta vitrine para servir de referência do que gostaríamos para o nosso novo lar. Você pode visualizar os modelos e nos ajudar contribuindo com o valor gerando um Pix abaixo!</p>
+      
+      <div class="filters">
+        <button class="filter-btn active" data-category="all">Todos</button>
+        <button class="filter-btn" data-category="cozinha">Cozinha</button>
+        <button class="filter-btn" data-category="sala">Sala</button>
+        <button class="filter-btn" data-category="quarto">Quarto & Banho</button>
+        <button class="filter-btn" data-category="eletro">Eletro</button>
+      </div>
+
+      <div class="products-grid" id="products-grid">
+        </div>
+    </section>
+
+    <section class="card" id="pix-section">
       <h2>Contribuir com Pix</h2>
-      <p class="text">Escolha um valor para gerar o Pix:</p>
+      <p class="text">Escolha um valor ou clique em um item da vitrine acima para transferir o valor do presente desejado:</p>
 
       <div class="valores">
         <button onclick="selecionarValor(100)">R$ 100</button>
@@ -43,25 +58,34 @@
       </div>
 
       <label>Valor livre</label>
-      <input id="valorLivre" type="number" placeholder="Digite outro valor" />
+      <input id="valorLivre" type="number" placeholder="Digite outro valor ou o valor do item" />
       <button onclick="usarValorLivre()">Gerar Pix</button>
 
       <label>Escolha a chave Pix</label>
       <select id="chavePix">
         <option value="a4094d9c-fa16-4ec4-bbab-24322b280c4a">Chave aleatória</option>
-        <option value="82988369610">Telefone</option>
       </select>
 
       <div id="pixArea" class="pix-area hidden">
         <h3>Pix gerado</h3>
         <div id="qrcode"></div>
-
         <textarea id="pixCopiaCola" readonly></textarea>
-
         <button onclick="copiarPix()">Copiar código Pix</button>
       </div>
     </section>
   </main>
+
+  <div class="modal" id="gift-modal">
+    <div class="modal-content">
+      <button class="close-modal">&times;</button>
+      <div id="modal-icon-container" style="font-size: 4rem; text-align: center; margin-bottom: 10px;"></div>
+      <h2 id="modal-title">Nome do Produto</h2>
+      <p class="modal-category" id="modal-category">Categoria</p>
+      <p id="modal-description" class="text" style="margin-bottom: 20px;">Descrição detalhada do item.</p>
+      
+      <button id="modal-contribute-btn" class="secondary">Contribuir com este item</button>
+    </div>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
   <script src="script.js"></script>
