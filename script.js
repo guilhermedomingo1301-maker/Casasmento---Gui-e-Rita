@@ -40,7 +40,7 @@ const products = [
         title: "Luminária de Chão",
         category: "sala",
         imageUrl: "https://m.media-amazon.com/images/I/61UDZxil4gL._AC_SX522_.jpg",
-        estimatedValue: 95,
+        estimatedValue: 120,
         description: "Luminária de piso para leitura, em metal preto ou dourado escuro, para compor o cantinho da nossa sala de estar."
     },
     {
